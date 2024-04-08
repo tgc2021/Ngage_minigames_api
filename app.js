@@ -62,8 +62,8 @@ const db2 = mysql.createConnection({
 
 
 const httpsOptions = {
-  key: fs.readFileSync('D:\\Playtolearn.in_ssl\\playtolearn_certificate.pem'),
-  cert: fs.readFileSync('D:\\Playtolearn.in_ssl\\Playtolearn_ssl_CRT.crt'),
+  key: fs.readFileSync('/opt/bitnami/letsencrypt/certificates/m2ost.com.key'),
+  cert: fs.readFileSync('/opt/bitnami/letsencrypt/certificates/m2ost.com.crt'),
 }
 
 // app.post('/api/users', (req, res) => {
@@ -1328,6 +1328,6 @@ app.get("/api/getGamePlayedStatus/:id_user/:org_id", (req, res) => {
 //   console.log(`Server is running on port ${port}`);
 // });
 
-const server = https.createServer(httpsOptions,app).listen(8080, () => {
-  console.log("Server running on https://localhost:8080/");
+const server = https.createServer(httpsOptions,app).listen(4000, () => {
+  console.log("Server running on https://localhost:4000/");
 });
